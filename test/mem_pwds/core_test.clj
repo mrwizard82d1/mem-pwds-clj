@@ -31,6 +31,9 @@
         (is (= contents actual-contents))))))
 
 
-
-  
-  
+(deftest next-test
+  (testing "next interface"
+    (let [words ["alpha" "foxtrot" "kilo" "papa" "uniform"]
+          generator (cycle words)]
+      (doseq [expected words]
+        (is (= expected (next-word generator)))))))
