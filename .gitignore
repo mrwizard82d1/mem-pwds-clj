@@ -10,5 +10,8 @@ pom.xml.asc
 .lein-*
 .nrepl-port
 
+# Test temporary directory
+.tmp
+
 # Emacs backup files.
 *~

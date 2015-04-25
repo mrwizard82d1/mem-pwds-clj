@@ -5,3 +5,6 @@
   "I don't do a whole lot ... yet."
   [& args]
   (println "Hello, World!"))
+
+(defn read-content [file-name]
+  (slurp file-name))
