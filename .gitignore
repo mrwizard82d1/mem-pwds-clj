@@ -10,6 +10,10 @@ pom.xml.asc
 .lein-*
 .nrepl-port
 
+# IntelliJ projects
+.idea/workspace.xml
+.idea/tasks.xml
+
 # Test temporary directory
 .tmp
 
