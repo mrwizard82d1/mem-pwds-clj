@@ -1,4 +1,4 @@
-(ns clj-mem-pwds.core
+(ns mem-pwds.core
   (:gen-class))
 
 (defn -main

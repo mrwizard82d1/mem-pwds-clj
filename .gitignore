@@ -1,14 +1,14 @@
 # Generated Clojure and lein files / directories.
-clj-mem-pwds/target
-clj-mem-pwds/classes
-clj-mem-pwds/checkouts
-clj-mem-pwds/lib/
+target
+classes
+checkouts
+lib/
 pom.xml
 pom.xml.asc
 *.jar
 *.class
-clj-mem-pwds/.lein-*
-clj-mem-pwds/.nrepl-port
+.lein-*
+.nrepl-port
 
 # Emacs backup files.
 *~
