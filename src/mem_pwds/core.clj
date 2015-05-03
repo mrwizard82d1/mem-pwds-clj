@@ -1,4 +1,5 @@
 (ns mem-pwds.core
+  (require [clojure.string :as str])
   (:gen-class))
 
 
@@ -12,7 +13,7 @@
   (slurp file-name))
 
 
-(defn next-word
-  "Returns a stream consisting of the next word from word-source."
-  [words]
-  (repeatedly (fn [] (rand-nth words))))
+(defn next-password
+  ([words] (next-password words rand-nth (str/join (map char (range 33 64))) rand-nth))
+  ([words words-f chars chars-f]
+   (str (words-f words) (chars-f chars) (words-f words))))

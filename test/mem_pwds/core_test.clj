@@ -32,8 +32,14 @@
 
 
 (deftest next-test
-  (testing "next interface"
+  (testing "next-password"
     (let [words ["alpha" "foxtrot" "kilo" "papa" "uniform"]
-          generator (cycle words)]
-      (doseq [expected words]
-        (is (= expected (next-word generator)))))))
+          prev-words-index (atom -1)
+          words-f (fn [ws]
+                    (nth ws (swap! prev-words-index inc)))
+          chars "0123456789!@#$%^&*()"
+          prev-chars-index (atom -1)
+          chars-f (fn [ws]
+                    (nth ws (swap! prev-chars-index inc)))]
+      (doseq [expected ["alpha0foxtrot" "kilo1papa" "uniform2alpha" "foxtrot3kilo" "papa4uniform"]]
+        (is (= expected (next-password (cycle words) words-f (cycle chars) chars-f)))))))
